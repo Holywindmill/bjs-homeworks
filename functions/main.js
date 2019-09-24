@@ -31,6 +31,7 @@ function showSolutionsMessage(a, b, c) {
 }
 
 showSolutionsMessage(7, 20, -3)
+
 //2.
 function getAverageScore(data) {
     let averages = [];
@@ -101,3 +102,4 @@ console.log(getPersonData({aaa: 0, bbb: 1}));
 console.log(getPersonData({aaa: 1, bbb: 0}));
 console.log(getPersonData({aaa: 0, bbb: 0}));
 console.log(getPersonData({aaa: 1, bbb: 1}));
+
