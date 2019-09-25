@@ -3,11 +3,16 @@ function initCheckBirthday() {
 
     const result = checkBirthday(birthday) ? "Да" : "Нет";
 
-    document.getElementById('disclaimer').innerHTML = result;   
+    document.getElementById('disclaimer').innerHTML = result;
 }
 
-function checkBirthday(birthday) {
-    // код для задачи №1 писать здесь
+function checkBirthday(date) {
+    let now = Date.now();
+    let birthday = Date.parse(date);
+    let diff = now - birthday;
+    const millsInYear = 365 * 24 * 60 * 60 * 1000;
+    let age = diff / millsInYear;
+    return age > 18;
 }
 
 function initPrintAnimalSound() {
@@ -17,11 +22,17 @@ function initPrintAnimalSound() {
 
     const result = getAnimalSound(animal);
 
-    document.getElementById('sound').innerHTML = result;   
+    document.getElementById('sound').innerHTML = result;
 }
 
+
 function getAnimalSound(animal) {
-    // код для задачи №2 писать здесь
+    if (animal === undefined) {
+        return null;
+    } else {
+        const sound = animal.sound;
+        return sound;
+    }
 }
 
 function initCalculateStatement() {
@@ -35,5 +46,11 @@ function initCalculateStatement() {
 }
 
 function getAverageMark(marks) {
-    // код для задачи №3 писать здесь
+    let total = 0;
+    for (let i = 0; i < marks.length; i++) {
+        total += parseInt(marks[i]);
+    }
+    let average = total / marks.length;
+    let roundedAverage = Math.round(average);
+    return roundedAverage;
 }
